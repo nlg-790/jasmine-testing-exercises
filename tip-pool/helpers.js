@@ -24,3 +24,13 @@ function appendTd(tr, value) {
 
   tr.append(newTd);
 }
+
+function removeEle(evt) {
+  let ele = evt.target.closest('tr');
+
+  delete allServers[ele.id];
+
+  ele.parentNode.removeChild(ele);
+  updateServerTable();
+}
+
